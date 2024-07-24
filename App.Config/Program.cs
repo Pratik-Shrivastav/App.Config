@@ -8,5 +8,12 @@ public class Program
         string name = ConfigurationManager.AppSettings["name"];
         Console.WriteLine(id);
         Console.WriteLine(name);
+
+        string path = ConfigurationManager.AppSettings["filepathtext"];
+        using (StreamWriter sw = new StreamWriter(path))
+        {
+            sw.WriteLine("Hello using App Config");
+        }
+
     }
 }
